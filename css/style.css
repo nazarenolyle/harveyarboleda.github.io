@@ -1,20 +1,19 @@
 @font-face {
-  font-family: 'Futura';
-  src: url('../fonts/FuturaBT-Medium.eot?#iefix') format('embedded-opentype'),  
-      url('../fonts/FuturaBT-Medium.woff') format('woff'), 
-      url('../fonts/FuturaBT-Medium.ttf')  format('truetype'), 
-      url('../fonts/FuturaBT-Medium.svg#FuturaBT-Medium') format('svg');
-  font-weight: 500;
-  font-style: normal;
+    font-family: 'Futura';
+    src: url('../fonts/FuturaBT-Medium.eot?#iefix') format('embedded-opentype'),  
+        url('../fonts/FuturaBT-Medium.woff') format('woff'), 
+        url('../fonts/FuturaBT-Medium.ttf')  format('truetype'), 
+        url('../fonts/FuturaBT-Medium.svg#FuturaBT-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
 }
 
-
+  
 html, body {
-    background: #000;
+    background: #040404;
     font-family: "Futura", "Helvetica Neue",Helvetica,Arial,sans-serif;
     color: #fff;
 }
-
 .navbar {
     font-family: "Futura", "Helvetica Neue",Helvetica,Arial,sans-serif;
     margin-bottom: 0;
@@ -66,6 +65,11 @@ html, body {
     .navbar-default .navbar-nav > .active > a:hover {
         color: #fe2121;
         background:transparent;
+        text-shadow:
+            -1px -1px 0 #000,  
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
     }
     .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
         color: #fe2121;
@@ -156,7 +160,6 @@ html, body {
    -o-transition: opacity 200ms linear;
    -ms-transition: opacity 200ms linear;
    transition: opacity 200ms linear;
-    display: none;
     height: 100vh;
     position: relative;
 }
@@ -168,30 +171,19 @@ section#home {
 }
 
 section#about {
-    background-color:#040404;
-    background: url('../img/giphy.gif') no-repeat fixed center;
+    background-color:#fe2121;
+    /*background: url('../img/giphy.gif') no-repeat fixed center;*/
     background-size:cover;
     padding-top: 70px;
     transition: 0.5s;
-}
-
-section.myname {
     height: 100%;
-    background: url('../img/myname.png') repeat-y;
-    background-position-x: right;
-    background-position-y:bottom;
-    animation: upsidedown 12s linear infinite;
-    padding-top: 70px;
 }
-
 
 section.mypic {
     height: 100%;
     background: url('../img/home-bg.png') no-repeat center;
     background-size: 800px 800px;
 }
-
-
 
 div.my-name {
     position: absolute;
@@ -200,6 +192,7 @@ div.my-name {
     transition: 0.5s;
     user-select: none;
 }
+
 @media(min-width: 768px) {
     div.my-name {
         position: absolute;
@@ -323,4 +316,139 @@ a:hover {
     to { left: -100%;}
 }
 
-  
+.about {
+    position:relative;
+}
+
+.wave {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: -18px;
+    z-index: 1;
+}
+.wave2 {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right:0;
+    z-index: 1;
+}
+
+#myname {
+    height: 100%;
+    background: url('../img/myname.png') repeat-y;
+    background-position-x: right;
+    background-position-y:bottom;
+    animation: upsidedown 12s linear infinite;
+}
+
+.flex-container {
+    padding-top:0;
+    width: 80%;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    overflow: auto;
+    flex-direction: row;
+    padding-bottom: 20vh;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+.flex-container div {
+    width: 200px;
+    height: 200px;
+    background-color: #040404;
+    user-select: none;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+#certificates {
+    padding-top: 70px;
+    background: #040404;
+}
+.certz {
+    cursor:pointer;
+}
+.certs {
+    padding-top:0;
+    width: 80%;
+}
+.certs div {
+    width: 200px;
+    height: 200px;
+    background-color: #fe2121;
+    user-select: none;
+    align-self: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+    padding: 20px;
+}
+.certs div:hover {
+    opacity: 0.4!important;
+}
+
+.flex-container img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.flex-container div span {
+    margin-top: 10px;
+    display: block;
+}
+
+.certs div img {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#portfolio {
+    padding-top: 70px;
+    background: #fe2121;
+}
+
+.s div {
+    position: relative;
+    cursor:pointer;
+}
+
+.s div:nth-child(1) {
+    background: url('../works/bookacleaner_thumbnail.png');
+}
+
+.s div:nth-child(2) {
+    background: url('../works/peekabook_thumbnail.png');
+}
+
+.s div:nth-child(3) {
+    background: url('../works/iharvs_bot_thumbnail.png');
+}
+
+.s div:nth-child(4) {
+    background: url('../works/zeus_thumbnail.png');
+}
+
+.s div span {
+    position: absolute;
+    bottom: 10px;
+    left:0;
+    right:0;
+    text-shadow: 0 0 2px #000;
+    user-select: none;
+}
+
+#viewPortfolioImg {
+    user-select: none;
+}
